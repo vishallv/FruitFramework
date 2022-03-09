@@ -1,0 +1,31 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MyFramework
+import Foundation
+@_exported import MyFramework
+import Swift
+import _Concurrency
+public class FruitGenerator {
+  public init()
+  public func getRandomFruit() -> MyFramework.FruitGenerator.Fruits
+  public enum Fruits : Swift.String, Swift.CaseIterable {
+    case mango
+    case apple
+    case kiwi
+    case banana
+    case dragonFruit
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [MyFramework.FruitGenerator.Fruits]
+    public typealias RawValue = Swift.String
+    public static var allCases: [MyFramework.FruitGenerator.Fruits] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+}
+extension MyFramework.FruitGenerator.Fruits : Swift.Equatable {}
+extension MyFramework.FruitGenerator.Fruits : Swift.Hashable {}
+extension MyFramework.FruitGenerator.Fruits : Swift.RawRepresentable {}
